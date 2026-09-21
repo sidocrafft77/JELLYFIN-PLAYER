@@ -1,0 +1,169 @@
+@import "tailwindcss";
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  0% { transform: scale(0.8); opacity: 0; }
+  50% { transform: scale(1.1); opacity: 0.95; }
+  100% { transform: scale(1.0); opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(12px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+.animate-scaleUp {
+  animation: scaleUp 0.3s ease-out forwards;
+}
+
+.animate-slideUp {
+  animation: slideUp 0.25s ease-out forwards;
+}
+
+/* Root theme CSS variables */
+:root,
+#app-root[data-theme="night"] {
+  --app-bg: #0a0a0a;
+  --app-surface: #171717;
+  --app-surface-hover: #262626;
+  --app-surface-muted: rgba(23, 23, 23, 0.7);
+  --app-border: #262626;
+  --app-border-strong: #333333;
+  --app-text: #f5f5f5;
+  --app-text-secondary: #d4d4d4;
+  --app-text-muted: #a3a3a3;
+  --app-header-bg: rgba(10, 10, 10, 0.90);
+  --app-card-bg: #171717;
+  --app-badge-bg: #262626;
+  --app-badge-text: #d4d4d4;
+  --app-input-bg: #171717;
+  --app-accent: #6366f1;
+}
+
+#app-root[data-theme="day"] {
+  --app-bg: #f8fafc;
+  --app-surface: #ffffff;
+  --app-surface-hover: #f1f5f9;
+  --app-surface-muted: rgba(255, 255, 255, 0.85);
+  --app-border: #e2e8f0;
+  --app-border-strong: #cbd5e1;
+  --app-text: #0f172a;
+  --app-text-secondary: #334155;
+  --app-text-muted: #64748b;
+  --app-header-bg: rgba(255, 255, 255, 0.92);
+  --app-card-bg: #ffffff;
+  --app-badge-bg: #e2e8f0;
+  --app-badge-text: #1e293b;
+  --app-input-bg: #ffffff;
+  --app-accent: #4f46e5;
+}
+
+/* Day mode styling adjustments for components */
+#app-root[data-theme="day"] {
+  background-color: var(--app-bg) !important;
+  color: var(--app-text) !important;
+}
+
+#app-root[data-theme="day"] header#main-app-header {
+  background-color: var(--app-header-bg) !important;
+  border-color: var(--app-border) !important;
+}
+
+#app-root[data-theme="day"] .bg-neutral-950,
+#app-root[data-theme="day"] .bg-neutral-950\/80,
+#app-root[data-theme="day"] .bg-neutral-950\/90 {
+  background-color: var(--app-bg) !important;
+}
+
+#app-root[data-theme="day"] .bg-neutral-900,
+#app-root[data-theme="day"] .bg-neutral-900\/90,
+#app-root[data-theme="day"] .bg-neutral-900\/80,
+#app-root[data-theme="day"] .bg-neutral-900\/50,
+#app-root[data-theme="day"] .bg-neutral-900\/40,
+#app-root[data-theme="day"] .bg-neutral-900\/30 {
+  background-color: var(--app-surface) !important;
+}
+
+#app-root[data-theme="day"] .bg-neutral-800,
+#app-root[data-theme="day"] .bg-neutral-800\/90,
+#app-root[data-theme="day"] .bg-neutral-800\/80,
+#app-root[data-theme="day"] .bg-neutral-800\/60,
+#app-root[data-theme="day"] .bg-neutral-800\/50 {
+  background-color: var(--app-badge-bg) !important;
+}
+
+#app-root[data-theme="day"] .border-neutral-800,
+#app-root[data-theme="day"] .border-neutral-800\/80,
+#app-root[data-theme="day"] .border-neutral-800\/90,
+#app-root[data-theme="day"] .border-neutral-800\/50,
+#app-root[data-theme="day"] .border-neutral-700,
+#app-root[data-theme="day"] .border-neutral-700\/60 {
+  border-color: var(--app-border) !important;
+}
+
+#app-root[data-theme="day"] .text-neutral-100,
+#app-root[data-theme="day"] .text-white {
+  color: var(--app-text) !important;
+}
+
+#app-root[data-theme="day"] .text-neutral-300,
+#app-root[data-theme="day"] .text-neutral-200 {
+  color: var(--app-text-secondary) !important;
+}
+
+#app-root[data-theme="day"] .text-neutral-400,
+#app-root[data-theme="day"] .text-neutral-500 {
+  color: var(--app-text-muted) !important;
+}
+
+#app-root[data-theme="day"] input[type="text"],
+#app-root[data-theme="day"] input[type="password"],
+#app-root[data-theme="day"] select {
+  background-color: var(--app-input-bg) !important;
+  color: var(--app-text) !important;
+  border-color: var(--app-border) !important;
+}
+
+/* Ensure video player stays in dark cinema mode */
+#app-root[data-theme="day"] #video-player-container,
+#app-root[data-theme="day"] .video-theater-mode,
+#app-root[data-theme="day"] .fixed.inset-0.bg-black\/80,
+#app-root[data-theme="day"] .fixed.inset-0.bg-black\/85,
+#app-root[data-theme="day"] .fixed.inset-0.bg-black\/90,
+#app-root[data-theme="day"] .fixed.inset-0.bg-black\/95 {
+  color: #f5f5f5 !important;
+}
+
+/* Smooth custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(10, 10, 10, 0.5);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(80, 80, 90, 0.4);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(120, 120, 140, 0.6);
+}
+
+#app-root[data-theme="day"] ::-webkit-scrollbar-track {
+  background: rgba(240, 240, 245, 0.8);
+}
+#app-root[data-theme="day"] ::-webkit-scrollbar-thumb {
+  background: rgba(180, 185, 200, 0.6);
+}
+#app-root[data-theme="day"] ::-webkit-scrollbar-thumb:hover {
+  background: rgba(140, 145, 165, 0.8);
+}

@@ -1,0 +1,8 @@
+{
+  "name": "Jellyfin Video Player",
+  "description": "A video player compatible with Jellyfin media servers featuring IMDb movie banners, dynamic interactive genre filtering, adaptive video resolution, continue watching with progress tracking, offline caching, and custom subtitle management.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
